@@ -16,5 +16,12 @@
   "bugs": {
     "url": "https://github.com/mariofalvarez/google-books-search/issues"
   },
-  "homepage": "https://github.com/mariofalvarez/google-books-search#readme"
+  "homepage": "https://github.com/mariofalvarez/google-books-search#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "concurrently": "^5.1.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.2",
+    "nodemon": "^2.0.2"
+  }
 }
