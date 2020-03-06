@@ -6,13 +6,18 @@ const PORT = process.env.PORT || 5000
 
 const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/googlebooks"
 
-mongoose.connect(MONGODB_URI, { useNewUrlParser: true })
+mongoose.connect(MONGODB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"))
 }
 
-app.use(express.urlencoded({ extended: true }))
+app.use(express.urlencoded({
+  extended: true
+}))
 app.use(express.json())
 
 const apiRoutes = require("./routes/api-routes")
