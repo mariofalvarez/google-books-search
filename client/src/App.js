@@ -77,19 +77,7 @@ function App() {
                   alt="Card image cap"
                 />
               </a>
-              <div className="card-body" style={{ position: "relative" }}>
-                {/* <button
-                                    data={book.id}
-                                    onClick={sayHi}
-                                    className="btn btn-outline-info"
-                                    style={{
-                                        position: "absolute",
-                                        bottom: "10px"
-                                    }}
-                                >
-                                    + Save
-                                </button> */}
-              </div>
+              <div className="card-body" style={{ position: "relative" }}></div>
             </div>
           ))}
         </div>

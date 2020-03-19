@@ -10,7 +10,6 @@ create((req, res) => {
   db.Book.find(req.query)
     .then(dbModel => res.send(dbModel))
     .catch(err => res.send(err))
-
 })
 
 module.exports = {
