@@ -21,7 +21,7 @@ app.use(express.json())
 const apiRoutes = require("./routes/api-routes")
 app.use("/api", apiRoutes)
 
-if (true || process.env.NODE_ENV === "production") {
+if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"))
   app.use("*", (req, res) => {
     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"))
