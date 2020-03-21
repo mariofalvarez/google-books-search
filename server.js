@@ -11,10 +11,6 @@ mongoose.connect(MONGODB_URI, {
   useUnifiedTopology: true
 })
 
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"))
-}
-
 app.use(express.urlencoded({
   extended: true
 }))
@@ -22,6 +18,10 @@ app.use(express.json())
 
 const apiRoutes = require("./routes/api-routes")
 app.use("/api", apiRoutes)
+
+if (true || process.env.NODE_ENV === "production") {
+  app.use('/*', express.static("client/build"))
+}
 
 app.listen(PORT, () => {
   console.log(`listening at http://localhost:${PORT}`)

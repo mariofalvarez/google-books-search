@@ -26,27 +26,27 @@ function App() {
       .catch(err => console.error(err))
   }
 
-  const handlePostSubmit = e => {
-    axios
-      .post("/api/new", { bookId: "" })
-      .then(res => {
-        console.log(res)
-      })
-      .catch(err => console.log(err))
-  }
+  // const handlePostSubmit = e => {
+  //   axios
+  //     .post("/api/new", { bookId: "" })
+  //     .then(res => {
+  //       console.log(res)
+  //     })
+  //     .catch(err => console.log(err))
+  // }
 
-  const sayHi = e => {
-    console.log(e.target.data)
-  }
+  // const sayHi = e => {
+  //   console.log(e.target.data)
+  // }
 
   return (
     <div className="App">
       <div className="container">
         <div className="jumbotron text-center">
           <h1 className="display-4 font-weight-bold text-info">
-            REACT Google Books
-          </h1>
-        </div>
+            REACT Google Books{" "}
+          </h1>{" "}
+        </div>{" "}
         <div className="input-group mb-3">
           <input
             onChange={handleChange}
@@ -59,16 +59,20 @@ function App() {
               onClick={handleSubmit}
               className="btn btn-outline-secondary"
             >
-              submit
-            </button>
-          </div>
-        </div>
+              submit{" "}
+            </button>{" "}
+          </div>{" "}
+        </div>{" "}
         <div className="row">
+          {" "}
           {apiResult.map(book => (
             <div
               key={book.id}
               className="card col-xs-6 col-sm-4 col-md-3 col-lg-2 mt-5 mb-5"
-              style={{ width: "18rem", margin: "0 10px" }}
+              style={{
+                width: "18rem",
+                margin: "0 10px"
+              }}
             >
               <a href={book.volumeInfo.previewLink}>
                 <img
@@ -76,12 +80,19 @@ function App() {
                   src={book.volumeInfo.imageLinks.thumbnail}
                   alt="Card image cap"
                 />
-              </a>
-              <div className="card-body" style={{ position: "relative" }}></div>
+              </a>{" "}
+              <div
+                className="card-body"
+                style={{
+                  position: "relative"
+                }}
+              >
+                {" "}
+              </div>{" "}
             </div>
-          ))}
-        </div>
-      </div>
+          ))}{" "}
+        </div>{" "}
+      </div>{" "}
     </div>
   )
 }
